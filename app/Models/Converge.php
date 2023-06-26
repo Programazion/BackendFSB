@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class Converge extends Model
 {
     use HasFactory;
 
-    protected $table = "books";
+    protected $table = "converges";
     protected $primaryKey = "id";
-    protected $fillable =["name", "isbn", "author", "edition","title"];
-    
+    protected $fillable =["Nombre","Rol","Edad"];
 }
-
-            
-            
