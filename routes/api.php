@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,12 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::get("/saludo",function(Request $request){
-    $message=['mensjae' =>"Hola mundo"];
+    $message=['mensaje' =>"Hola mundo"];
     return response()->json($message);
 
 });
+//LLamndo la clase BookController // Cambiando las rutas para que cada una se comporte diferente
+Route::get("/booksGet",[BookController::class,'read']);
+Route::post("/booksPost",[BookController::class,'create']);
+Route::put("/booksPatch",[BookController::class,'update']);
+Route::delete("/booksDelete",[BookController::class,'delete']);
